@@ -1,0 +1,21 @@
+<app-navbar></app-navbar>
+<div class="vh-100 gradient-custom">
+  <div class="container">
+      <div class ="row">
+          <div *ngIf="datosOferta" class="mx-auto col-md-6 mt-5 col-12">
+              <div class="bg-dark text-center rounded text-white py-3">
+                    <h5><strong>Título: </strong> {{datosOferta.titulo}}</h5>
+                    <h5><strong>Descripción: </strong>{{datosOferta.descripcion}}</h5>
+                    <h5><strong>Empresa: </strong>{{datosOferta.empresa}}</h5>
+                    <h5><strong>Salario: </strong>{{datosOferta.salario}}</h5>
+                    <h5><strong>Ciudad: </strong>{{datosOferta.ciudad}}</h5>
+                    <h5><strong>Email: </strong>{{datosOferta.email}}</h5>
+              </div>
+              <div>
+                <a [routerLink]="['/home/']" class="btn btn-primary w-100">Volver a la home</a>
+              </div>
+          </div>
+      </div>
+  </div>
+
+</div>

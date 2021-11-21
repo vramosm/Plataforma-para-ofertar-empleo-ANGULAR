@@ -1,0 +1,120 @@
+<app-navbar></app-navbar>
+<section class="vh-100 gradient-custom">
+  <div class="container py-5 h-100">
+    <div class=" text-center mt-5 ">
+      <h1 class= "fw-bold mb-2 text-uppercase">Bienvenido al formulario de registro</h1>
+      <h3 class= "fw-bold mb-2 text-uppercase">Completa todos los campos para añadir una nueva oferta</h3>
+    </div>
+    <div class="row py-5">
+      <div class=" mx-auto col-md-9 mt-7 col-12 bg-dark text-center rounded text-white py-3 " >
+        <form class= "needs-validation" id="contact-form" role="form" [formGroup]="formularioOferta" (ngSubmit)="crearOferta();" >
+          <div class="controls ">
+            <div class="col-md-12" >
+              <label for="nombre" style="color: rgb(114, 80, 238); font-size: 25px; font-weight: bold;" class="justify-content-center align-items-center">Datos de suscripcion</label>
+              <h5>* Campos obligatorios</h5>
+            </div>
+              <div class="col-md-12">
+                <div class="form-group justify-content-sm-end ">
+                  <label for="titulo">Titulo *</label>
+                  <input id="titulo" type="text"
+                          name="titulo"
+                          class="form-control anchocompleto"
+                          formControlName="titulo"
+                          placeholder="Título descriptivo de la oferta"
+                          required="required"
+                          autofocus
+                          data-error="El campo es obligatorio.">
+                  <div   class="valid-feedback">¡Campo Valido!</div>
+                  <div  class="invalid-feedback">¡Minimo usa 5 caracteres!</div>
+                </div>
+              </div>
+              <div class="col-md-12">
+                <div class="form-group">
+                  <label for="descripcion">Descripción *</label>
+                  <input id="descripcion" type="text"
+                          name="descripcion"
+                          formControlName="descripcion"
+                          class="form-control anchocompleto"
+                          placeholder="Breve descripción del puesto de trabajo"
+                          required="required"
+                          autofocus>
+                  <div class="valid-feedback">¡Campo Valido!</div>
+                  <div class="invalid-feedback">¡Minimo usa 3 caracteres!</div>
+                </div>
+              </div>
+            <div class="row">
+              <div class="col-md-6">
+                <div class="form-group">
+                  <label for="empresa">Empresa *</label>
+                  <input id="empresa" type="text"
+                          name="empresa"
+                          formControlName="empresa"
+                          class="form-control anchocompleto"
+                          placeholder="Nombre de la empresa"
+                          required="required">
+                  <div class="valid-feedback">¡Campo Valido!</div>
+                  <div class="invalid-feedback">¡Formato no valido!Minimo 9 numeros</div>
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="form-group">
+                  <label for="email">Email *</label>
+                  <div class="input-group">
+                    <div class="input-group-prepend">
+                      <span class="input-group-text" id="inputGroupPrepend">@</span>
+                    </div>
+                    <input id="email" type="email"
+                            name="email"
+                            formControlName="email"
+                            class="form-control anchocompleto"
+                            placeholder="Dirección de correo al que se debe enviar el CV"
+                            aria-describedby="inputGroupPrepend"
+                            required="required">
+                    <div class="valid-feedback">¡Campo Valido!</div>
+                    <div class="invalid-feedback">¡Formato no reconocido!</div>
+                    </div>
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-12">
+                <div class="form-group">
+                  <label for="salario">Salario </label>
+                  <input id="salario" type="number"
+                            name="salario"
+                            formControlName="salario"
+                            class="form-control anchocompleto"
+                            placeholder="Salario bruto anual en euros"
+                            required="required">
+                  <div class="valid-feedback">¡Campo Valido!</div>
+                  <div class="invalid-feedback">¡Formato no reconocido!</div>
+                </div>
+              </div>
+              <div class="col-md-12">
+                <div class="form-group">
+                  <label for="ciudad">Ciudad</label>
+                  <input id="ciudad" type="text"
+                            name="ciudad"
+                            formControlName="ciudad"
+                            class="form-control anchocompleto"
+                            placeholder="Ciudad"
+                            required="required">
+                  <div class="valid-feedback">¡Campo Valido!</div>
+                  <div class="invalid-feedback">¡Formato no reconocido!</div>
+                </div>
+              </div>
+            </div>  
+            <div class="col-md-12 text-center" style="padding-top: 10px;">
+              <input type="submit" value="Upload" class="my-4 btn btn-success btn-send pt-2 btn-block " *ngIf="formularioOferta.valid">
+              <div class="alert alert-info" *ngIf="!formularioOferta.valid">
+              Podrá subir la oferta cuando todos los campos estén correctamente rellenados. </div>
+              <div class="alert alert-info" *ngIf="formularioOferta.valid">
+              Tras subir la oferta, será redirigido a OFERTAS. </div>
+            </div>
+          </div>
+        </form>
+      </div> 
+    </div>
+  </div>
+  </section>
+  

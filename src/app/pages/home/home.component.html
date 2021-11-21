@@ -1,0 +1,13 @@
+<app-navbar></app-navbar>
+<section class="vh-100 gradient-custom">
+<div class= "container">
+    <div class ="row">
+        <div class= "mx-auto col-lg-4 col-12 ofertas" *ngFor="let item of this.arrayDatosOfertas">
+            <div class="bg-dark text-center rounded text-white py-3 my-4">
+                  <h5>{{item.titulo}}</h5>
+                  <a [routerLink]="['/oferta/', item.id]" class="btn btn-primary my-4 px-5">Ver</a>
+            </div>
+        </div>
+    </div>
+</div>
+</section>

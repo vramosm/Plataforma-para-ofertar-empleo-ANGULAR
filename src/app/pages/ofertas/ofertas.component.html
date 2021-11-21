@@ -1,0 +1,19 @@
+<app-navbar></app-navbar>
+<section class="vh-100 gradient-custom">
+<div class= "container">
+    <div class ="row">
+        <div class= "mx-auto col-lg-4 col-12 ofertas" *ngFor="let item of this.arrayDatosOfertas">
+            <div class="bg-dark text-center rounded text-white py-3 my-4">
+                  <h5>{{item.titulo}}</h5>
+                  <button (click)="eliminarOferta(item.id)" class="btn btn-danger my-4 px-5">Eliminar</button>
+            </div>
+        </div>
+    </div>
+    <div class="text-center mt-3">
+        <button  class="btn btn-outline-light btn-lg px-5" routerLink="/nuevaOferta/">Añadir</button>
+    </div>
+    <div *ngIf="mensaje" class="col-md-8 bg-dark text-white mx-auto position-absolute fixed-bottom py-3 text-center">
+        {{mensaje}}
+    </div>
+</div>
+</section>
